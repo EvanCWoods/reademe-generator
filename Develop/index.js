@@ -7,13 +7,17 @@ const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const { title, description, installInstructions, usageInstrustions, constributionGuide } = data;
+    const { title, TableOfContents, description, installInstructions, usageInstrustions, constributionGuide, tests, githubUsername, email, license } = data;
     fs.appendFile(fileName, 
         `# ${title} \n 
+## Table of Contents \n ${TableOfContents} \n
+##license \n ${license} \n
 ## Description \n ${description} \n
-### Instructions \n ${installInstructions}\n
-### Usage Instructions \n ${usageInstrustions} \n
-### Contribution Guide \n ${constributionGuide}`, 
+## Instructions \n ${installInstructions}\n
+## Usage Instructions \n ${usageInstrustions} \n
+## Contribution Guide \n ${constributionGuide} \n
+## Tests \n ${tests} \n
+## Questions \n ${githubUsername} \n ${email}`, 
         (res, err) => {
         if (err) {
             console.log(err);
@@ -28,6 +32,11 @@ function init() {
             type: "input",
             name: "title",
             message: "README Title: ",
+        },
+        {
+            type: "input",
+            name: "TableOfContents",
+            message: "README Table of Contents: ",
         },
         {
             type: "input",
@@ -47,16 +56,44 @@ function init() {
         {
             type: "input",
             name: "constributionGuide",
-            message: "README Usage Instructions: ",
+            message: "README Contribution Guide: ",
+        },
+        {
+            type: "input",
+            name: "tests",
+            message: "README Tests: ",
+        },
+        {
+            type: "input",
+            name: "githubUsername",
+            message: "README Github User Name: ",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "README Email: ",
+        },
+        {
+            type: "list",
+            name: "license",
+            message: "README License: ",
+            choices: [
+                "MIT"
+            ]
         },
     ]).then( (data) => {
         const title = data.title;
+        const TableOfContents = data.TableOfContents;
         const description = data.description;
         const installInstructions = data.installInstructions;
         const usageInstructions = data.usageInstructions;
         const constributionGuide = data.constributionGuide;
+        const tests = data.tests;
+        const githubUsername = data.githubUsername;
+        const email = data.email;
+        const license = data.license;
         writeToFile("README.md", data)
-    })
+    });
 }
 
 // Function call to initialize app
