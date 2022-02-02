@@ -24,7 +24,7 @@ function writeToFile(fileName, data) {
 ## Usage Instructions \n ${usageInstrustions} \n
 ## Contribution Guide \n ${constributionGuide} \n
 ## Tests \n ${tests} \n
-## Questions \n ${githubUsername} \n ${email}`, 
+## Questions \n * https://github.com/${githubUsername} \n * ${email}`, 
         (res, err) => {
         if (err) {
             console.log(err);
