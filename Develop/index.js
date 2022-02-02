@@ -8,7 +8,7 @@ const questions = [];
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     // Destructure the data
-    const { title, TableOfContents, description, installInstructions, usageInstrustions, constributionGuide, tests, githubUsername, email, license } = data;
+    const { title, description, installInstructions, usageInstrustions, contributionGuide, tests, githubUsername, email, license } = data;
     let licenseBadge;
     // set teh license for badges
     if (license == "MIT") {
@@ -17,12 +17,18 @@ function writeToFile(fileName, data) {
     // Write the data to the file
     fs.appendFile(fileName, 
         `# ${title} \n 
-## Table of Contents \n ${TableOfContents} \n
+## Table of Contents \n
+* [license](##license) \n
+* [Description](##description) \n
+* [Install Instructions](##instructions) \n
+* [Usage Instructions](##usageinstructions) \n
+* [Contribution Instructions](##contributioninstructions) \n
+* [Tests](##tests) \n
 ## License \n ${licenseBadge} \n
 ## Description \n ${description} \n
 ## Instructions \n ${installInstructions}\n
 ## Usage Instructions \n ${usageInstrustions} \n
-## Contribution Guide \n ${constributionGuide} \n
+## Contribution Guide \n ${contributionGuide} \n
 ## Tests \n ${tests} \n
 ## Questions \n * https://github.com/${githubUsername} \n * ${email}`, 
         (res, err) => {
@@ -62,7 +68,7 @@ function init() {
         },
         {
             type: "input",
-            name: "constributionGuide",
+            name: "contributionGuide",
             message: "README Contribution Guide: ",
         },
         {
@@ -94,7 +100,7 @@ function init() {
         const description = data.description;
         const installInstructions = data.installInstructions;
         const usageInstructions = data.usageInstructions;
-        const constributionGuide = data.constributionGuide;
+        const contributionGuide = data.contributionGuide;
         const tests = data.tests;
         const githubUsername = data.githubUsername;
         const email = data.email;
