@@ -7,11 +7,18 @@ const questions = [];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    // Destructure the data
     const { title, TableOfContents, description, installInstructions, usageInstrustions, constributionGuide, tests, githubUsername, email, license } = data;
+    let licenseBadge;
+    // set teh license for badges
+    if (license == "MIT") {
+        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    }
+    // Write the data to the file
     fs.appendFile(fileName, 
         `# ${title} \n 
 ## Table of Contents \n ${TableOfContents} \n
-##license \n ${license} \n
+## License \n ${licenseBadge} \n
 ## Description \n ${description} \n
 ## Instructions \n ${installInstructions}\n
 ## Usage Instructions \n ${usageInstrustions} \n
