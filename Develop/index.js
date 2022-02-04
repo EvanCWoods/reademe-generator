@@ -9,11 +9,8 @@ const questions = [];
 function writeToFile(fileName, data) {
     // Destructure the data
     const { title, description, installInstructions, usageInstrustions, contributionGuide, tests, githubUsername, email, license } = data;
-    let licenseBadge;
     // set teh license for badges
-    if (license == "MIT") {
-        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-    }
+        let licenseBadge = `[![License: ${license}](https://img.shields.io/badge/License-${license}-yellow.svg)](https://opensource.org/licenses/${license})`
     // Write the data to the file
     fs.appendFile(fileName, 
         `# ${title} \n 
@@ -24,13 +21,15 @@ function writeToFile(fileName, data) {
 * [Usage Instructions](##usageinstructions) \n
 * [Contribution Instructions](##contributioninstructions) \n
 * [Tests](##tests) \n
-## License \n ${licenseBadge} \n
+## License \n ${licenseBadge} \n 
 ## Description \n ${description} \n
 ## Instructions \n ${installInstructions}\n
 ## Usage Instructions \n ${usageInstrustions} \n
 ## Contribution Guide \n ${contributionGuide} \n
 ## Tests \n ${tests} \n
-## Questions \n * https://github.com/${githubUsername} \n * ${email}`, 
+## Questions \n
+I am reachable through either of the methods listed below. Access my GitHub page to see my work, or email me at the address provided. 
+\n* https://github.com/${githubUsername} \n* ${email}`, 
         (res, err) => {
         if (err) {
             console.log(err);
