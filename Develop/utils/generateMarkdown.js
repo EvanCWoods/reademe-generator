@@ -29,12 +29,10 @@ function renderLicenseSection(license) {
   const licenseLink = renderLicenseLink(license);
   if (license) {
     return `
-    ## License
+${licenseBadge}
 
-    ${licenseBadge}
-
-    ${licenseLink}
-    `
+${licenseLink}
+`
   } else {
     return "";
   }
@@ -44,7 +42,40 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   const license = renderLicenseSection(data.license);
   return `# ${data.title}
-  ${license}
+
+
+## License
+${license}
+
+
+## Table of Contents
+
+
+
+## Description
+${data.description}
+
+
+## Installation Instructions
+    ${data.installInstructions}
+
+
+## Usage Instructions
+${data.usageInstructions}
+
+
+## Contribution Guide
+${data.contributionGuide}
+
+
+## Tests
+${data.tests}
+
+
+## Questions
+
+* https://github.com/${data.githubUsername}
+* ${data.email}
 `;
 }
 
