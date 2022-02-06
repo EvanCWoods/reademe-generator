@@ -49,22 +49,27 @@ ${license}
 
 
 ## Table of Contents
-
+* [Description](#description) 
+* [Installation Instructions](#installation)
+* [Usage Instructions](#usage)
+* [Contribution Guide](#contribute)
+* [Tests](#tests)
+* [Questions](#questions)
 
 
 ## Description
 ${data.description}
 
 
-## Installation Instructions
+## Installation
     ${data.installInstructions}
 
 
-## Usage Instructions
+## Usage
 ${data.usageInstructions}
 
 
-## Contribution Guide
+## Contribute
 ${data.contributionGuide}
 
 
