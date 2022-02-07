@@ -56,7 +56,9 @@ const questions = [
             name: "license",
             message: "README License: ",
             choices: [
-                "MIT"
+                "MIT",
+                "Apache-2.0",
+                "MPL-2.0"
             ]
         } 
     ]).then( (data) => {

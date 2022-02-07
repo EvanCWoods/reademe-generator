@@ -2,8 +2,22 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let licenseBadge;
+  let licenseCode;
+
+  switch(license) {
+    case "MIT":
+      licenseCode = "MIT";
+      break;
+    case "Apache-2.0":
+      licenseCode = "Apache_2.0";
+      break;
+    case "MPL-2.0":
+      licenseCode = "MPL_2.0"
+      break;
+  }
+
   if (license) {
-    licenseBadge = `[![License: ${license}](https://img.shields.io/badge/License-${license}-yellow.svg)](https://opensource.org/licenses/${license})`;
+    licenseBadge = `[![License: ${license}](https://img.shields.io/badge/License-${licenseCode}-yellow.svg)](https://opensource.org/licenses/${license})`;
   } else {
     licenseBadge = "";
   }
