@@ -20,6 +20,7 @@ const questions = [
             type: "input",
             name: "installInstructions",
             message: "README Installation Instructions: ",
+            default: "npm i"
         },
         {
             type: "input",
@@ -45,6 +46,11 @@ const questions = [
             type: "input",
             name: "email",
             message: "README Email: ",
+        },
+        {
+            type: "input",
+            name: "website",
+            message: "README Website: ",
         },
         {
             type: "list",

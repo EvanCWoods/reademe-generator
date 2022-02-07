@@ -76,6 +76,7 @@ ${data.description}
 
 
 ## Installation
+To Install and run this application yourself, follow the below step(s).\n
     ${data.installInstructions}
 
 
@@ -92,9 +93,10 @@ ${data.tests}
 
 
 ## Questions
-
+For any questions about the code please see my github for source code, email me at the address provided, or find my social media links on my portfolio website. 
 * https://github.com/${data.githubUsername}
 * ${data.email}
+* ${data.website}
 `;
 }
 
