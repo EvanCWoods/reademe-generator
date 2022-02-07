@@ -13,11 +13,6 @@ const questions = [
         },
         {
             type: "input",
-            name: "TableOfContents",
-            message: "README Table of Contents: ",
-        },
-        {
-            type: "input",
             name: "description",
             message: "README Description: ",
         },
